@@ -1,0 +1,95 @@
+
+/** Fuentes **/
+@font-face {
+    font-family: "Segoe UI";
+    src: url('fonts/segoeui.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** Generales **/
+* {
+    margin:0%;
+    padding:0%;
+}
+
+body {
+    background-color: rgb(47, 47, 47);
+}
+
+#menu {
+   display: grid;
+   grid-template-columns:auto;
+   padding: 10px;
+   background-color: black;
+   align-items:center;
+   justify-items: right;
+   padding: 0.5rem;
+   width: 100%;
+   border-radius: 0.5rem;
+   box-shadow: 3px 3px 8px 0px;
+}
+
+#menu ul li {
+    font-size: 24px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+    margin: 0px 15px 0px 20px;
+    letter-spacing: 1px;
+    line-height: 50px;
+}
+
+#menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.parrafo {
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:medium;
+    color: white
+}
+
+.pie{
+    display: flex;
+    justify-content: space-around;
+    position:fixed;
+    left: 0px;
+    bottom:0px;
+    height: 50px;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(24, 23, 23);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+}
+
+.texto {
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.center {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 300px) {
+    .columnas {grid-template-columns: repeat(1, 1fr);}
+}
+
+@media (min-width: 600px) {
+    .columnas {grid-template-columns: repeat(2, 1fr);}
+}
