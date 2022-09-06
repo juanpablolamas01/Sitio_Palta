@@ -14,15 +14,49 @@
 }
 
 body {
-    background-color: rgb(47, 47, 47);
+    background-color: #171717;
+    background-image: linear-gradient(43deg, #171717 14%, #194227 72%);
 }
 
+/** Grid Areas **/
+/* .menu_grid {
+    grid-area: top_menu;
+}
+
+.banner_grid {
+    grid-area: banner;
+}
+
+.col1_grid {
+    grid-area: col1;
+}
+
+.col2_grid {
+    grid-area: col2;
+}
+
+.video_grid {
+    grid-area: video;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.pie_grid {
+    grid-area: pie;
+    justify-items: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(24, 23, 23);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+} */
+
 #menu {
-   display: grid;
-   grid-template-columns:auto;
+   display: flex;
+   justify-content: flex-end;
    padding: 10px;
    background-color: black;
-   align-items:center;
    justify-items: right;
    padding: 0.5rem;
    width: 100%;
@@ -45,6 +79,11 @@ body {
     text-decoration: none;
 }
 
+#menu ul li :hover {
+    color: rgb(78, 222, 76);
+    transition: 0.5s;
+    }
+    
 .parrafo {
     margin: 0px;
     padding-top: 10px;
@@ -54,42 +93,51 @@ body {
     color: white
 }
 
-.pie{
-    display: flex;
-    justify-content: space-around;
-    position:fixed;
-    left: 0px;
-    bottom:0px;
-    height: 50px;
-    width: 100%;
+.texto {
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video_size {
+    width: 840px;
+    height: 480px;
+}
+
+.pie {
+    justify-items: left;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(24, 23, 23);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:white;
+
 }
 
-.texto {
-    color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* @media (min-width:300px) {
+    .contenedor {
+        display: grid;
+        grid-template-areas: 
+        "top_menu top_menu top_menu top_menu top_menu top_menu"
+        "banner banner banner banner banner banner"
+        "col1 col1 col1 col1 col1 col1"
+        "col2 col2 col2 col2 col2 col2"
+        "video video video video video video"
+        "pie pie pie pie pie pie"
+        ;
+    }
+
 }
 
-.columnas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.center {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-@media (min-width: 300px) {
-    .columnas {grid-template-columns: repeat(1, 1fr);}
-}
-
-@media (min-width: 600px) {
-    .columnas {grid-template-columns: repeat(2, 1fr);}
-}
+@media (min-width:700px) {
+    .contenedor {
+        display: grid;
+        grid-template-areas: 
+        "top_menu top_menu top_menu top_menu top_menu top_menu"
+        "banner banner banner banner banner banner"
+        "col1 col1 col1 col2 col2 col2"
+        "video video video video video video"
+        "pie pie pie pie pie pie"
+        ;
+    }  
+} */
