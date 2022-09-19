@@ -1,0 +1,17 @@
+@import 'colors.scss';
+@import 'header.scss';
+@import 'footer.scss';
+
+body {
+    background: rgb(52,40,99);
+    background: linear-gradient(0deg, $gradient-init 0%, $gradient-middle 45%, $gradient-end 100%);
+}
+
+.parrafo {
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:medium;
+    color: $primary-color;
+}
