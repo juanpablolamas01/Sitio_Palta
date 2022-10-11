@@ -4,7 +4,12 @@
 
 
 // Mapa de tamaños para las fuentes
-$font-sizes: ("chica": 12px, "mediana": 18px, "grande": 24px);
+$font-sizes: (
+  "chica": 12px,
+  "mediana": 18px,
+  "grande": 24px,
+  "titles": 40px
+);
 
 // Mixin para color de fondo de párrafos
 @mixin tema($fondo: DarkGray) {
@@ -13,43 +18,97 @@ $font-sizes: ("chica": 12px, "mediana": 18px, "grande": 24px);
   color: #ffffff;
 }
 
-.parrafo_gris {
-  @include tema;
-}
-.parrafo_rojo {
-  @include tema($fondo: DarkRed);
-}
-.parrafo_verde {
-  @include tema($fondo: DarkGreen);
+.black_back {
+  @include tema ($fondo: black);
 }
 
 body {
-    background: rgb(52,40,99);
-    background: linear-gradient(0deg, $gradient-init 0%, $gradient-middle 45%, $gradient-end 100%);
+  background: rgb(52, 40, 99);
+  background: linear-gradient(0deg, $gradient-init 0%, $gradient-middle 45%, $gradient-end 100%);
 }
 
 %parrafo {
-    margin: 0px;
-    padding-top: 10px;
-    padding-left: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: map-get($font-sizes, "chica");
-    color: $primary-color;
+  margin: 0px;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: map-get($font-sizes, "chica");
+  color: $primary-color;
+}
+
+
+%subtitles {
+  margin: 0px;
+  padding-top: 10px;
+  padding-left: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: map-get($font-sizes, "mediana");
+  color: $primary-color;
+}
+
+%titles {
+  padding-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: map-get($font-sizes, "grande");
+  color: $primary-color;
+}
+
+%cards_styles {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%image_titles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Tahoma', sans-serif;
+  font-size: map-get($font-sizes, "titles");
+  color: $primary-color;
+}
+
+%image_styles {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.image_styles {
+  @extend %image_styles;
+}
+
+.image_titles {
+  @extend %image_titles;
+}
+
+.cards_styles {
+  @extend %cards_styles;
+}
+
+.subtitles {
+  @extend %subtitles;
+}
+
+.titles {
+  @extend %titles;
 }
 
 // Extend para distinta alineación de texto
 .parrafo {
-    @extend %parrafo;
+  @extend %parrafo;
 }
 
 .parrafo_al_centro {
-    @extend %parrafo;
-    text-align: center;
+  @extend %parrafo;
+  text-align: center;
 }
 
 .parrafo_a_la_derecha {
-    @extend %parrafo;
-    border: 5px gray;
-    text-align: right;
-
+  @extend %parrafo;
+  border: 5px gray;
+  text-align: right;
 }
